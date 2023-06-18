@@ -1,0 +1,35 @@
+@charset "utf-8";
+
+body {
+  background: lightgreen;
+  width: 400px;
+  margin: 0 auto; 
+  text-align: center;
+}
+
+.container {
+  margin: 80px 0 0;
+}
+
+h1 {
+  font-size: 50px;
+}
+
+p {
+  font-size: 30px;
+}
+
+.contents {
+  font-size: 40px;
+}
+
+
+.href {
+  margin-bottom: 30px;
+  font-size: 30px;
+}
+
+.ad {
+  display: flex;
+  flex-direction: column;
+}

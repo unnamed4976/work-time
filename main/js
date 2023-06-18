@@ -1,0 +1,65 @@
+'use strict';
+
+{
+  
+  let hiduke = document.getElementById('hiduke');
+  let jikan = document.getElementById('jikan');
+  let toLunch = document.getElementById('toLunch');
+  let toEnd = document.getElementById('toEnd');
+  
+
+  function clock()
+  {
+  let d = new Date();
+
+  let year = d.getFullYear();
+  let month = d.getMonth() + 1;
+  let date = d.getDate();
+
+  let hour = d.getHours();
+  let minute = d.getMinutes();
+  let second = d.getSeconds();
+
+  hiduke.textContent = '本日の日付 : ' + year + '年' + month + '月' + date  + '日';
+  jikan.textContent = '現在時刻 : ' + hour + '時' + minute + '分' + second + '秒';
+
+// お昼休憩までの時間
+let toLunchH;
+  toLunchH = 12 -1 - hour;
+  console.log(toLunchH);
+ 
+let toLunchM;
+ toLunchM = 60 - 1 - minute;
+ console.log(toLunchM);
+
+let toLunchS;
+ toLunchS = 60 - second;
+ console.log(toLunchS);
+
+// 終業時刻までの時間
+let toEndH;
+  toEndH = 18 - 1 - hour;
+  console.log(toEndH);
+ 
+let toEndM;
+ toEndM = 60 -1 - minute;
+
+let toEndS;
+ toEndS = 60 - second;
+
+if ( hour >= 12 || hour < 9) {
+    toLunch.textContent = " ---- ";
+  } else {
+    toLunch.textContent = 'お昼休憩までの時間 : あと' + toLunchH + '時間' + toLunchM + '分' + toLunchS + '秒';
+  }
+
+if ( hour >= 18 || hour < 9) {
+    toEnd.textContent = " --本日終業-- ";
+  } else {
+    toEnd.textContent = '終業までの時間 : あと' + toEndH + '時間' + toEndM + '分' + toEndS + '秒';
+  }
+  
+  }
+  setInterval(clock, 1000);
+    
+}
